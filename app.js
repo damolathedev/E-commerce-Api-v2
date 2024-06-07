@@ -39,16 +39,9 @@ app.use(mongoSanitize())
 
 
 app.use(express.json())
-app.use(morgan('tiny'))
 app.use(cookieParser(process.env.JWT_SECRET))
 app.use(fileUpload())
 
-
-
-app.get('/api/v1',(req,res)=>{
-    console.log(req.signedCookies.token);
-    res.send('e-commerce api')
-})
 
 app.use(express.static('./public'))
 
